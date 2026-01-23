@@ -20,6 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import kg.abu.core.navigation.Routes
 import kg.abu.feature_language.LanguageScreen
 import kg.abu.feature_library.LibraryScreen
 import kg.abu.feature_literature.LiteratureScreen
@@ -40,7 +41,7 @@ fun MainNavGraph() {
         BottomNavItem(
             route = Routes.LIBRARY,
             label = "Library",
-            icon = Icons.Filled.MenuBook
+            icon = Icons.Filled.Menu
         ),
         BottomNavItem(
             route = Routes.LITERATURE,
@@ -81,12 +82,10 @@ fun MainNavGraph() {
                             }
                         },
                         icon = {
-                            item.icon?.let {
-                                Icon(
-                                    imageVector = it,
-                                    contentDescription = item.label
-                                )
-                            }
+                            Icon(
+                                imageVector = item.icon,
+                                contentDescription = item.label
+                            )
                         },
                         label = { Text(item.label) }
                     )

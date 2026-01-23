@@ -1,9 +1,9 @@
-package kg.abu.languagesource.navigation
+package kg.abu.core.navigation
 
 object Routes {
 
     const val SPLASH = "splash"
-    const val MAIN = "main"
+    const val ON_BOARDING = "on_boarding"
 
     const val AUTH = "auth"
     const val LANGUAGE = "language"

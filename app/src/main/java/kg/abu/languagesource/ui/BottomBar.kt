@@ -35,7 +35,7 @@ fun BottomBar(
             selected = currentRoute == "library",
             onClick = onLibrary,
             label = { Text("Библиотека") },
-            icon = { Icon(Icons.Filled.MenuBook, null) }
+            icon = { Icon(Icons.Filled.Menu, null) }
         )
 
         NavigationBarItem(
