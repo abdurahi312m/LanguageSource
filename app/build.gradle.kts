@@ -41,10 +41,13 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.navigation.compose)
 
     implementation(libs.kotlinx.serialization.json)
+
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.material.icons.core)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -62,8 +65,15 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+    implementation(project(":core"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
+    implementation(project(":feature-auth"))
     implementation(project(":feature-library"))
     implementation(project(":feature-language"))
     implementation(project(":feature-literature"))
+    implementation(project(":feature-profile"))
+    implementation(project(":feature-splash"))
     implementation(project(":feature-training"))
 }
