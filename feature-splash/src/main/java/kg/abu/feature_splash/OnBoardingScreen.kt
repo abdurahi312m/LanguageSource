@@ -10,10 +10,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import kg.abu.core.navigation.Routes
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun OnBoardingScreen(
-    navController: NavController
+    navController: NavController,
+    viewModel: OnBoardingViewModel = koinViewModel()
 ) {
 
     Column(
@@ -21,7 +23,9 @@ fun OnBoardingScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text("Обучающий экран")
+
+        viewModel.completeOnBoarding()
+//        Text("Обучающий экран")
 
         Button(
             onClick = { navController.navigate(Routes.AUTH) {

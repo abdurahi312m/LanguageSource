@@ -1,4 +1,4 @@
-package kg.abu.data
+package kg.abu.core
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey

@@ -21,7 +21,7 @@ fun RootNavGraph() {
         startDestination = Routes.SPLASH
     ) {
         composable(Routes.SPLASH) {
-            SplashScreen(navController = navController, context = context)
+            SplashScreen(navController = navController)
         }
 
         composable(Routes.ON_BOARDING) {
@@ -30,7 +30,7 @@ fun RootNavGraph() {
 
         composable(Routes.AUTH) {
             AuthScreen(
-                navController = navController, context = context
+                navController = navController
             )
         }
 
