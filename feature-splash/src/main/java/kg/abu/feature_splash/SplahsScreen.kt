@@ -1,36 +1,28 @@
 package kg.abu.feature_splash
 
-import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import kg.abu.core.navigation.Routes
-import kg.abu.data.AppPreferences
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun SplashScreen(
     navController: NavController,
-    context: Context
+    viewModel: SplashViewModel = koinViewModel()
 ) {
-    val appPreferences = remember { AppPreferences(context) }
+    val startDestination by viewModel.startDestination.collectAsState()
 
-    LaunchedEffect(key1 = true) {
-        delay(2000)
-
-        val isCompleted = appPreferences.isOnBoardingCompleted.first()
-
-        if (isCompleted) {
-            navController.navigate(Routes.LANGUAGE)
-        } else {
-            navController.navigate(Routes.ON_BOARDING) {
+    LaunchedEffect(startDestination) {
+        startDestination?.let { route ->
+            navController.navigate(route) {
                 popUpTo(Routes.SPLASH) { inclusive = true }
             }
         }

@@ -35,6 +35,13 @@ android {
 
 dependencies {
 
+    implementation(libs.koin.android)
+
+    implementation(libs.androidx.datastore.preferences)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
     implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)

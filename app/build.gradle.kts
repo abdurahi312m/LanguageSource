@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -40,6 +41,9 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
 
     implementation(libs.androidx.navigation.compose)
 
