@@ -69,9 +69,9 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
+//    implementation(project(":data"))
     implementation(project(":core"))
     implementation(project(":domain"))
-    implementation(project(":data"))
 
     implementation(project(":feature-auth"))
     implementation(project(":feature-library"))
