@@ -16,13 +16,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import kg.abu.core.navigation.Routes
 import kg.abu.feature_language.LanguageScreen
 import kg.abu.feature_library.LibraryScreen
+import kg.abu.feature_library.ReaderScreen
 import kg.abu.feature_literature.LiteratureScreen
 import kg.abu.feature_profile.ProfileScreen
 import kg.abu.feature_training.TrainingScreen
@@ -100,10 +103,25 @@ fun MainNavGraph() {
             modifier = Modifier.padding(padding)
         ) {
             composable(Routes.LANGUAGE) { LanguageScreen() }
-            composable(Routes.LIBRARY) { LibraryScreen() }
+            composable(Routes.LIBRARY) {
+                LibraryScreen(
+                    onBookClick = { bookId ->
+                        navController.navigate(Routes.getReaderRoute(bookId))
+                    }
+                )
+            }
             composable(Routes.LITERATURE) { LiteratureScreen() }
             composable(Routes.TRAINING) { TrainingScreen() }
             composable(Routes.PROFILE) { ProfileScreen() }
+
+            composable(
+                route = Routes.READER,
+                arguments = listOf(navArgument("bookId") { type = NavType.StringType })
+            ) { backStackEntry ->
+                ReaderScreen(
+                    onBackClick = { navController.popBackStack() }
+                )
+            }
         }
     }
 }

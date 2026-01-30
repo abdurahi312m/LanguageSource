@@ -12,4 +12,8 @@ object Routes {
     const val TRAINING = "training"
     const val PROFILE = "profile"
 
+    const val READER = "reader/{bookId}"
+
+    fun getReaderRoute(bookId: String) = "reader/$bookId"
+
 }
