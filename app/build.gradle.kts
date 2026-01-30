@@ -76,7 +76,6 @@ dependencies {
     implementation(project(":feature-auth"))
     implementation(project(":feature-library"))
     implementation(project(":feature-language"))
-    implementation(project(":feature-literature"))
     implementation(project(":feature-profile"))
     implementation(project(":feature-splash"))
     implementation(project(":feature-training"))
