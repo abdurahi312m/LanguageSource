@@ -5,7 +5,6 @@ import kg.abu.core.networkModule
 import kg.abu.feature_auth.authModule
 import kg.abu.feature_language.languageModule
 import kg.abu.feature_library.libraryModule
-import kg.abu.feature_literature.literatureModule
 import kg.abu.feature_profile.profileModule
 import kg.abu.feature_splash.splashModule
 import kg.abu.feature_training.trainingModule
@@ -24,7 +23,6 @@ class LanguageSourceApp : Application() {
                 authModule,
                 profileModule,
                 libraryModule,
-                literatureModule,
                 trainingModule,
                 languageModule,
                 splashModule,

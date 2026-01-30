@@ -2,9 +2,7 @@ package kg.abu.languagesource.navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.School
 import androidx.compose.material.icons.filled.Translate
@@ -26,7 +24,6 @@ import kg.abu.core.navigation.Routes
 import kg.abu.feature_language.LanguageScreen
 import kg.abu.feature_library.LibraryScreen
 import kg.abu.feature_library.ReaderScreen
-import kg.abu.feature_literature.LiteratureScreen
 import kg.abu.feature_profile.ProfileScreen
 import kg.abu.feature_training.TrainingScreen
 
@@ -45,11 +42,6 @@ fun MainNavGraph() {
             route = Routes.LIBRARY,
             label = "Library",
             icon = Icons.Filled.Menu
-        ),
-        BottomNavItem(
-            route = Routes.LITERATURE,
-            label = "Literature",
-            icon = Icons.Filled.Book
         ),
         BottomNavItem(
             route = Routes.TRAINING,
@@ -110,7 +102,6 @@ fun MainNavGraph() {
                     }
                 )
             }
-            composable(Routes.LITERATURE) { LiteratureScreen() }
             composable(Routes.TRAINING) { TrainingScreen() }
             composable(Routes.PROFILE) { ProfileScreen() }
 

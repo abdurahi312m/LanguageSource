@@ -7,7 +7,6 @@ object Routes {
 
     const val AUTH = "auth"
     const val LANGUAGE = "language"
-    const val LITERATURE = "literature"
     const val LIBRARY = "library"
     const val TRAINING = "training"
     const val PROFILE = "profile"
