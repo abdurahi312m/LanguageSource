@@ -26,6 +26,7 @@ import kg.abu.feature_library.LibraryScreen
 import kg.abu.feature_library.ReaderScreen
 import kg.abu.feature_profile.ProfileScreen
 import kg.abu.feature_training.TrainingScreen
+import kg.abu.feature_training.trainingNavGraph
 
 @Composable
 fun MainNavGraph() {
@@ -102,7 +103,7 @@ fun MainNavGraph() {
                     }
                 )
             }
-            composable(Routes.TRAINING) { TrainingScreen() }
+            trainingNavGraph(navController)
             composable(Routes.PROFILE) { ProfileScreen() }
 
             composable(

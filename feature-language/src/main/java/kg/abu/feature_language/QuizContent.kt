@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kg.abu.domain.model.QuizQuestion
+import kg.abu.domain.model.language.QuizQuestion
 
 @Composable
 fun QuizContent(

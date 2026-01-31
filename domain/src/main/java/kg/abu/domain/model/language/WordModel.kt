@@ -1,4 +1,6 @@
-package kg.abu.domain.model
+package kg.abu.domain.model.language
+
+import kg.abu.domain.model.language.WordType
 
 data class WordModel(
     val id: String,
