@@ -9,10 +9,10 @@ class OnBoardingViewModel(
     private val appPreferences: AppPreferences
 ): ViewModel() {
 
-    fun completeOnBoarding() {
+    fun completeOnBoarding(isTeacher: Boolean) {
         viewModelScope.launch {
+            appPreferences.saveUserRole(isTeacher)
             appPreferences.saveOnBoardingCompleted()
         }
     }
-
 }

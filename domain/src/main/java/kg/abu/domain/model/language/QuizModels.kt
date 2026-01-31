@@ -1,4 +1,4 @@
-package kg.abu.domain.model
+package kg.abu.domain.model.language
 
 data class QuizQuestion(
     val id: Int,

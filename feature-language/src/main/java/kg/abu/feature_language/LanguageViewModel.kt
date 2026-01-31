@@ -11,9 +11,9 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kg.abu.domain.model.DifficultyLevel
-import kg.abu.domain.model.WordModel
-import kg.abu.domain.model.WordType
+import kg.abu.domain.model.language.DifficultyLevel
+import kg.abu.domain.model.language.WordModel
+import kg.abu.domain.model.language.WordType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
