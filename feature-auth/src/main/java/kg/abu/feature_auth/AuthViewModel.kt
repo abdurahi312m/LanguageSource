@@ -2,6 +2,7 @@ package kg.abu.feature_auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kg.abu.domain.repository.AuthRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

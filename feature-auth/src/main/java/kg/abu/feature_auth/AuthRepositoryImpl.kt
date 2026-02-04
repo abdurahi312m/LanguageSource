@@ -2,6 +2,7 @@ package kg.abu.feature_auth
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import kg.abu.domain.repository.AuthRepository
 import kotlinx.coroutines.tasks.await
 
 class AuthRepositoryImpl(private val firebaseAuth: FirebaseAuth) : AuthRepository {
@@ -16,6 +17,10 @@ class AuthRepositoryImpl(private val firebaseAuth: FirebaseAuth) : AuthRepositor
         } catch (e: Exception) {
             Result.failure(e)
         }
+    }
+
+    override fun getUserEmail(): String? {
+        return firebaseAuth.currentUser?.email
     }
 
     override suspend fun signInAnonymously(): Result<Boolean> {
@@ -33,5 +38,9 @@ class AuthRepositoryImpl(private val firebaseAuth: FirebaseAuth) : AuthRepositor
 
     override fun getUserId(): String? {
         return firebaseAuth.currentUser?.uid
+    }
+
+    override suspend fun signOut() {
+        firebaseAuth.signOut()
     }
 }

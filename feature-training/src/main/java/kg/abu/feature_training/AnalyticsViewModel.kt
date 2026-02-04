@@ -34,8 +34,8 @@ class AnalyticsViewModel : ViewModel() {
             _state.value = AnalyticsState(
                 totalTestsPassed = 12,
                 averageScore = 78,
-                grammarProgress = 0.65f, // 65%
-                ortProgress = 0.40f,     // 40%
+                grammarProgress = 0.65f,
+                ortProgress = 0.40f,
                 recentActivity = listOf(
                     ActivityItem("Зат атооч (Тест)", "Бүгүн", 90),
                     ActivityItem("Окуу жана түшүнүү", "Кечээ", 75),

@@ -34,7 +34,7 @@ fun TrainingCard(
         onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
-            .height(100.dp), // Высота карточки
+            .height(100.dp),
         shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = mode.color),
         elevation = CardDefaults.cardElevation(4.dp)
