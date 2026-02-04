@@ -1,4 +1,4 @@
-package kg.abu.feature_auth
+package kg.abu.domain.repository
 
 interface AuthRepository {
     suspend fun signInAnonymously(): Result<Boolean>
@@ -8,4 +8,8 @@ interface AuthRepository {
     fun isUserLoggedIn(): Boolean
 
     fun getUserId(): String?
+
+    fun getUserEmail(): String?
+
+    suspend fun signOut()
 }

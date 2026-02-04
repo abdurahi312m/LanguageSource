@@ -53,16 +53,14 @@ fun OrtSelectionScreen(
                 style = MaterialTheme.typography.titleMedium
             )
 
-            // Карточка Аналогии
             TrainingCard(
                 mode = TrainingMode(
                     "Окшоштуктар жана сүйлөм толуктоо",
                     Icons.Default.CompareArrows,
                     Color(0xFFFFCC80)
                 )
-            ) { onSectionClick(OrtSection.ANALOGY) } // Используем одну карточку для двух типов пока
+            ) { onSectionClick(OrtSection.ANALOGY) }
 
-            // Карточка Чтение
             TrainingCard(
                 mode = TrainingMode(
                     "Окуу жана түшүнүү (Текст менен иштөө)",

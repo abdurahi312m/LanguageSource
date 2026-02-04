@@ -1,6 +1,7 @@
 package kg.abu.feature_auth
 
 import com.google.firebase.auth.FirebaseAuth
+import kg.abu.domain.repository.AuthRepository
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

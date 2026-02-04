@@ -59,5 +59,5 @@ dependencies {
     implementation(project(":feature-auth"))
 
     implementation(project(":core"))
-    implementation(project(":data"))
+    implementation(project(":domain"))
 }

@@ -11,7 +11,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -44,7 +43,6 @@ import kg.abu.domain.model.training.OrtRepository
 fun OrtReadingScreen(
     onBackClick: () -> Unit
 ) {
-    // Берем первый текст из репозитория для примера
     val task = remember { OrtRepository.getReadingTasks().first() }
     val questions = task.questions
 
@@ -64,7 +62,6 @@ fun OrtReadingScreen(
         }
     ) { padding ->
         if (isFinished) {
-            // Используем экран результата из TrainingQuizScreen
             Box(modifier = Modifier.padding(padding)) {
                 TrainingResultContent(score, questions.size, onBackClick) {
                     currentQuestionIndex = 0
@@ -79,10 +76,9 @@ fun OrtReadingScreen(
                     .padding(padding)
                     .fillMaxSize()
             ) {
-                // 1. Область ТЕКСТА (сверху, занимает 40-50% экрана)
                 Card(
                     modifier = Modifier
-                        .weight(1f) // Занимает гибкое место
+                        .weight(1f)
                         .fillMaxWidth()
                         .padding(8.dp),
                     colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
@@ -90,7 +86,7 @@ fun OrtReadingScreen(
                     Column(
                         modifier = Modifier
                             .padding(16.dp)
-                            .verticalScroll(rememberScrollState()) // Текст прокручивается
+                            .verticalScroll(rememberScrollState())
                     ) {
                         Text(
                             text = task.title,
@@ -108,7 +104,6 @@ fun OrtReadingScreen(
 
                 Divider(thickness = 2.dp, color = MaterialTheme.colorScheme.primary)
 
-                // 2. Область ВОПРОСА (снизу, фиксированная)
                 Column(
                     modifier = Modifier
                         .weight(1f)
@@ -130,7 +125,6 @@ fun OrtReadingScreen(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Варианты
                     LazyColumn(modifier = Modifier.weight(1f)) {
                         items(question.options.size) { index ->
                             val isSelected = selectedOptionIndex == index
@@ -146,7 +140,6 @@ fun OrtReadingScreen(
                         }
                     }
 
-                    // Кнопка Далее
                     Button(
                         onClick = {
                             if (selectedOptionIndex == question.correctAnswerIndex) score++
